@@ -23,7 +23,6 @@ jobs:
            node: 14
            test: payment-gateway-integration.test.js
     steps:
-      - name: Use Node.js
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test $
