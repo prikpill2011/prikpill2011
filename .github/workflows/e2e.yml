@@ -1,7 +1,5 @@
 name: UI Test
-
-on: [push]
-branches:
+      branches:
     - feature/github-actions-ecommerce
 
 jobs: 
