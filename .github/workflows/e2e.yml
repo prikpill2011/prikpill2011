@@ -1,5 +1,8 @@
 name: UI Test
-      branches:
+
+on:
+ push:
+  branches:
     - feature/github-actions-ecommerce
 
 jobs: 
@@ -8,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-      include:
+       include:
          - os: ubuntu-latest
            node: 14
            test: product-listing-page.test.js
