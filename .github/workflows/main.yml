@@ -1,0 +1,36 @@
+name: UI Tests
+
+on:
+push:
+branches:
+- main
+
+jobs:
+ui-tests:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout code
+  uses: actions/checkout@v3
+- name: Run UI tests
+run: |
+  # Install dependencies
+  npm install
+  # Run UI tests
+  npm run ui-tests
+
+
+This code:
+
+- Triggers the workflow on push events to the main branch
+- Uses the latest Ubuntu runner
+- Checks out the code
+- Installs dependencies using npm
+- Runs the UI tests using the `npm run ui-tests` command
+
+*Note*: Replace `npm run ui-tests` with the actual command you use to run your UI tests.
+
+1. *Commit and push your changes*: Save the file and commit it to your repository.
+
+This workflow will now automatically run your UI tests on every push event to the main branch.
+
+If you need further assistance or have questions, feel free to ask! ‎<This message was edited>
