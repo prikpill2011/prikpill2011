@@ -1,0 +1,21 @@
+name: ZAP Baseline Scan
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  zap-baseline-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: OWASP ZAP Baseline Scan
+        uses: owasp/zap-github-action@v1
+        with:
+          target: https://juice-shop.herokuapp.com/
+          scan-type: baseline
+          report-format: html
+          report-file: zap-baseline-scan.html
